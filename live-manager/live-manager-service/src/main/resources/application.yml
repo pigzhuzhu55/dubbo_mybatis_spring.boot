@@ -1,0 +1,55 @@
+server:
+    port: 8088
+    servlet:
+        context-path: ''
+    tomcat:
+      uri-encoding: utf-8
+    undertow:
+       accesslog:
+          enabled: true
+          dir: ./logs
+logging:
+  config: classpath:log4j2.xml
+mapper:
+    identity: SQLSERVER
+    mappers: com.zqhl.live.manager.dao.util.MyMapper
+    not-empty: false
+    safeDelete: true
+pagehelper:
+    helperDialect: sqlserver
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+mybatis:
+    #mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.zqhl.live.manager.po
+    configuration:
+      log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+spring:
+    datasource:
+        source1:
+            connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+            driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+            filters: stat
+            initialSize: 5
+            maxActive: 20
+            maxPoolPreparedStatementPerConnectionSize: 20
+            maxWait: 60000
+            minEvictableIdleTimeMillis: 300000
+            minIdle: 5
+            password: '123456'
+            poolPreparedStatements: true
+            testOnBorrow: false
+            testOnReturn: false
+            testWhileIdle: true
+            timeBetweenEvictionRunsMillis: 60000
+            url: jdbc:sqlserver://192.168.2.16:1433;database=数据库名称
+            username: sa
+            validationQuery: select 'x'
+    http:
+      encoding:
+        force: true
+        charset: utf-8
+        enabled: true
+    cache:
+      type: GENERIC

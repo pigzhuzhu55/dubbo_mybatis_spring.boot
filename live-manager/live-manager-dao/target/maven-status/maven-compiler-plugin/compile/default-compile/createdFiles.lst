@@ -1,0 +1,7 @@
+com\zqhl\live\manager\dao\util\BaseMapper.class
+com\zqhl\live\manager\dao\mapper\SysRoleMapper.class
+com\zqhl\live\manager\dao\service\impl\SysRoleServiceImpl.class
+com\zqhl\live\manager\dao\service\IService.class
+com\zqhl\live\manager\dao\util\MapperBeanDefinitionRegistryPostProcessor.class
+com\zqhl\live\manager\dao\service\impl\BaseService.class
+com\zqhl\live\manager\dao\service\SysRoleService.class
